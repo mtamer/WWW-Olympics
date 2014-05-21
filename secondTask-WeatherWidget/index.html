@@ -1,0 +1,93 @@
+<html ng-app="weatherApp">
+<head>
+  <title>Weather widget</title>
+
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+  <!-- Angular CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+
+  <!-- Custom JS -->
+  <script src="app.js"></script>
+
+  <style type="text/css">
+/*
+  #weatherwidget {
+
+    width:100vw;
+    background-color:#ccc;
+    background-image: radial-gradient(#ccc,#999);
+    border-radius: 2vw;
+    padding:2vh;}
+    h1, h2, h3 {padding:0;
+      margin:0;}
+      #city-name { float:left;
+        font-size:32vw;
+        line-height:15vw;
+      }
+
+      #city-country-flag { background-image:url("http://upload.wikimedia.org/wikipedia/en/thumb/c/cf/Flag_of_Canada.svg/300px-Flag_of_Canada.svg.png");
+      float:right;background-size:cover;
+      width:48vw;
+      height:24vw;
+      background-position: center;
+      background-repeat:no-repeat;
+    }
+    section { clear:both;
+      padding:2em;text-align:center; border-top:solid 1px black;}
+    #list-dt { float:left;}
+    #temp-max-min { text-align:center;margin-left:50%;
+      width: 80%;
+      height:15vw;
+    }
+    #temp-max-min div  { font-size:24vw;line-height:4vw; margin-top: -10vw; margin-left: -70vw;}
+ /*   #clock { margin:auto;
+      width:100%;
+      background-image:url("http://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Horlo%C4%9Do_001.svg/220px-Horlo%C4%9Do_001.svg.png");
+      background-size:30vw;
+      height:30vw;
+      font-size:5vw;
+    }*/
+
+    #list-weather-description {
+      font-size: 10vw;
+    }
+*/
+
+    </style>
+
+</head>
+<body ng-controller="WeatherController" ng-init="getData()">
+  <div class="search-form">
+    <input type="text" ng-model="search">
+    <input type="submit" ng-click="getData()">
+  </div>
+    <div id="weatherwidget">
+      <header>
+        <h1 id="city-name">{{search}}</h1>
+        <div id="city-country-flag"></div>
+      </header>
+      <section>
+        <h2 id="list-dt">{{ today.dt*1000 | date: 'MMM d, y' }}</h2>
+        <div id="temp-max-min">
+          <div id="list-temp-max">{{today.temp.max}} C</div>
+        </div>
+      </section>
+      <section>
+        <h3>Humidity</h3>
+        <div id="list-humidity">{{today.humidity}}%</div>
+        <div id="clock">
+          <div id="list-temp-morn">Morning: {{today.temp.morn}}</div>
+          <div id="list-temp-day">Day: {{today.temp.day}}</div>
+          <div id="list-temp-eve">Evening: {{today.temp.eve}}</div>
+          <div id="list-temp-night">Night: {{today.temp.night}}</div>
+        </div>
+        <div id="list-weather-description">{{today.weather[0].description}}</div>
+      </section>
+      <footer></footer>
+    </div>
+
+
+</body>
+</html>
