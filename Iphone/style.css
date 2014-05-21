@@ -1,0 +1,19 @@
+.outer-box{
+	float: center;
+	border-style: solid;
+	width: 250px;
+	height: 500px;
+	border-radius: 10px;
+}
+
+.circle{
+	border-style: solid;
+	border-radius: 50%;
+	width: 20px;
+	height: 17px;
+}
+.screen{
+	border-style: solid;
+	width:125px;
+	height:200px;
+}
