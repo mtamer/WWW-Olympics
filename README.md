@@ -10,7 +10,7 @@ Build an iphone 5 in 20 minutes, using HTML/CSS. Refer to http://www.cssauthor.c
 ![alt tag](https://raw.github.com/mtamer/WWW-Olympics/master/iphone.png)
 
 ##Second Task:
-In one hour build a weather widget using Open Weather (http://openweathermap.org/API).
+In one hour build a weather widget using Open Weather API (http://openweathermap.org/API).
 
 
  
